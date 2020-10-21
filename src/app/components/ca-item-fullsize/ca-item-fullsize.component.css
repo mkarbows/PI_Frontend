@@ -1,0 +1,492 @@
+.ca-data {
+  text-align: left;
+}
+
+.title {
+  line-height: 10px;
+}
+
+.one-full-width {
+  display: block;
+}
+
+.four-quarters {
+  display: block;
+}
+
+.four-quarters > div {
+  width: calc(50% - 10px);
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.four-quarters > div > :first-child {
+  width: calc(50% - 5px);
+}
+
+.four-quarters > div > :last-child {
+  width: calc(50% - 5px);
+  margin-left: 5px;
+}
+
+.two-halves {
+  display: block;
+}
+
+.quarters-then-half {
+  display: block;
+}
+
+.full-width {
+  display: block;
+  width: calc(100% - 15px);
+}
+
+.two-halves > :first-child {
+  width: calc(50% - 10px);
+}
+
+.two-halves > :last-child {
+  width: calc(50% - 10px);
+  margin-left: 5px;
+}
+
+.quarters-then-half > :last-child {
+  width: calc(50% - 10px);
+  margin-left: 0px;
+}
+
+.quarters-then-half > :first-child {
+  width: calc(50% - 10px);
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.quarters-then-half > :first-child > :first-child {
+  width: calc(50% - 10px);
+}
+
+.quarters-then-half > :first-child > :last-child {
+  width: calc(50% - 5px);
+  margin-left: 5px;
+}
+
+.full-width > :only-child {
+  width: 100%;
+}
+
+table .ca-item th {
+  padding-left: 10px !important;
+  padding-right: 10px;
+}
+
+.ca-item {
+  min-width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow-x: scroll;
+}
+
+.table-container{
+  min-width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+
+tr.ca-item-row > td {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.associatedFileHeader {
+  text-align: center;
+}
+
+.subheader-title {
+  margin-bottom: 0;
+}
+mat-form-field {
+  min-width: 0;
+}
+
+.image-placeholder { /* Using this to represent future content and keep the UI from bouncing around*/
+  height: 100%;
+  position: relative;
+  width: auto;
+}
+
+.image-container {
+  height: 39.5vh;
+  width: 100%;
+}
+
+.image-card {
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  width: auto;
+}
+
+.image-card img, video {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.item-ca {
+  height: 570px;
+  width: 400px;
+}
+
+.back-to-thumbnail {
+  float: right;
+  line-height: 20px;
+  padding: 7px !important;
+  min-width: 20px;
+}
+
+.right-button,
+.left-button {
+  float: right;
+  line-height: 20px;
+  padding: 7px !important;
+  min-width: 20px;
+}
+
+.right-tooltip {
+  float: right;
+  min-width: 20px;
+}
+
+.left-tooltip {
+  float: right;
+  min-width: 20px;
+}
+
+.file-path {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.ca-title {
+  font-size: 13px;
+  color: #aaaaaa;
+}
+
+.circle {
+  border-radius: 50%;
+  margin: 4px auto;
+  height: 180px;
+  width: 180px;
+}
+
+.circle.icon-ca-rfi {
+  background-color: #8F98E5;
+  margin-bottom: 10px;
+
+}
+.circle.icon-ca-submittal {
+  background-color: #da750180;
+  margin-bottom: 10px;
+}
+
+.circle .circle-inner {
+  font-size: 60pt;
+  font-weight: bold;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 180px;
+  height: 180px;
+}
+
+.img-spinner {
+  margin: auto;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.action-buttons{
+  margin-bottom: 8px;
+}
+
+.mainHeader {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding-top: 12px;
+  float: left;
+}
+
+.not-found {
+  font-size: 13px;
+  font-weight: 500;
+  padding-top: 12px;
+}
+
+.circle {
+  border-radius: 50%;
+  margin: 4px auto;
+  height: 180px;
+  width: 180px;
+}
+
+table.item-associated-drawing th {
+  text-align: center !important;
+  padding-left: 20px !important;
+  padding-right: 20px;
+}
+
+.item-associated-drawing .circle {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.item-associated-drawing .circle .circle-inner {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+tr.item-associated-drawing-row:hover.enabled {
+  cursor: pointer;
+}
+
+tr.item-associated-drawing-row:hover.disabled {
+  pointer-events: none;
+}
+
+.right-button{
+  float: right;
+  vertical-align: middle;
+}
+
+.left-button {
+  float: left;
+  vertical-align: middle;
+}
+
+.circle.icon-drawing-0 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-drawing-1 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-drawing-2 {
+  background-color: rgb(123, 9, 5);
+}
+
+.circle.icon-drawing-3 {
+  background-color: rgb(198, 47, 206);
+}
+
+.circle.icon-drawing-4 {
+  background-color: rgb(184, 93, 70);
+}
+
+.circle.icon-drawing-5 {
+  background-color: rgb(4, 135, 101);
+}
+
+.circle.icon-drawing-6 {
+  background-color: rgb(58, 18, 131);
+}
+
+.circle.icon-drawing-7 {
+  background-color: rgb(231, 37, 37);
+}
+
+.circle.icon-drawing-8 {
+  background-color: rgb(10, 68, 43);
+}
+
+.circle.icon-drawing-9 {
+  background-color: rgb(48, 88, 252);
+}
+
+.circle.icon-drawing-12 {
+  background-color: rgb(83, 16, 240);
+}
+
+.circle.icon-drawing- {
+  background-color: rgb(148, 114, 26);
+}
+
+.disabled .circle {
+  background-color: #90929D !important;
+}
+
+.disabled span {
+  color: #90929D;
+}
+
+.copy-link-button {
+  width: 40px !important;
+  float: right;
+}
+
+.copy-link-symbol {
+  font-size: 24px !important;
+}
+
+.circle.icon-specification-00,
+.circle.icon-specification-21,
+.circle.icon-specification-43 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-specification-01,
+.circle.icon-specification-22,
+.circle.icon-specification-44 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-specification-02,
+.circle.icon-specification-23,
+.circle.icon-specification-45 {
+  background-color: rgb(123, 9, 5);
+}
+
+.circle.icon-specification-03,
+.circle.icon-specification-25,
+.circle.icon-specification-46 {
+  background-color: rgb(198, 47, 206);
+}
+
+.circle.icon-specification-04,
+.circle.icon-specification-26,
+.circle.icon-specification-48 {
+  background-color: rgb(184, 93, 70);
+}
+
+.circle.icon-specification-05,
+.circle.icon-specification-27 {
+  background-color: rgb(4, 135, 101);
+}
+
+.circle.icon-specification-06,
+.circle.icon-specification-28 {
+  background-color: rgb(58, 18, 131);
+}
+
+.circle.icon-specification-07,
+.circle.icon-specification-31 {
+  background-color: rgb(231, 37, 37);
+}
+
+.circle.icon-specification-08,
+.circle.icon-specification-32 {
+  background-color: rgb(10, 68, 43);
+}
+
+.circle.icon-specification-09,
+.circle.icon-specification-33 {
+  background-color: rgb(48, 88, 252);
+}
+
+.circle.icon-specification-10,
+.circle.icon-specification-34 {
+  background-color: rgb(83, 16, 240);
+}
+
+.circle.icon-specification-11,
+.circle.icon-specification-35 {
+  background-color: rgb(66, 65, 117);
+}
+
+.circle.icon-specification-12,
+.circle.icon-specification-40 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-specification-13,
+.circle.icon-specification-41 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-specification-14,
+.circle.icon-specification-42 {
+  background-color: rgb(56, 114, 115);
+}
+
+.circle.icon-specification- {
+  background-color: rgb(148, 114, 26);
+}
+
+.ca-number {
+  color: #D12B7D;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.title {
+  color: rgb(27, 27, 27);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  line-height: 27px;
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+
+.right-button {
+  line-height: 20px;
+  padding: 7px !important;
+  width: 50px;
+  height: 100px !important;
+  color: #4b4b4b;
+}
+
+.left-button {
+  line-height: 20px;
+  padding: 7px !important;
+  width: 50px;
+  height: 100px !important;
+  color: #4b4b4b;
+}
+
+.prevnext {
+  transform: scale(5);
+}
+
+div.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.top-container {
+  width: 100%;
+}
+
+.right-tooltip {
+  float: right;
+  min-width: 20px;
+}
+
+.left-tooltip {
+  float: left;
+  min-width: 20px;
+}

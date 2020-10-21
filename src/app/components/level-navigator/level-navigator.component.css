@@ -1,0 +1,4 @@
+.level-selected,
+.level-selected:hover {
+  background-color: #ddd;
+}

@@ -1,0 +1,14 @@
+<button
+  mat-flat-button color="accent"
+  (click)="resetMap()"
+  [disabled]="
+    this.selectedTerminal === '' &&
+    this.selectedPhase === '' &&
+    this.selectedDiscipline === '' &&
+    this.selectedLevel === '' &&
+    this.filteredSegment === '' &&
+    this.selectedStartDate === '' &&
+    this.selectedEndDate === ''
+  ">
+  Reset
+</button>

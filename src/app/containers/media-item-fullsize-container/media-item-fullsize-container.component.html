@@ -1,0 +1,30 @@
+<div *ngIf="(mediaItem$ | async) as mediaItem; else spinner" style="height: 100%;">
+  <app-fullsize-header
+    [selectedNavType]="selectedNavType"
+    [selectedItemType]="selectedItemType"
+    (closeFullsizeComponent)="closeFullsize()"
+  ></app-fullsize-header>
+  <app-media-item-fullsize
+    [mediaItem]="mediaItem"
+    [apiRoot]="apiRoot"
+    [geoDataTypes]="geoDataTypes"
+    [title]="mediaItem.title"
+    [adjacentItems]="adjacentItems"
+    [currentEndpoint]="mediaItem.url_endpoint"
+    [pagingInputs]="pagingInputs$ | async"
+    [selectedNavType]="selectedNavType"
+    [selectedItemType]="selectedItemType"
+    [mapMarkerClicked]="mapMarkerClicked$ | async"
+    (closeFullsizeComponent)="closeFullsize()"
+    (getNextItem)="getNextItem($event)"
+    (getNextPage)="getNextPage($event)"
+    (getPrevItem)="getPrevItem($event)"
+    (getPrevPage)="getPrevPage($event)"
+    [selectedNavType]="selectedNavType"
+    [currentEndpoint]="mediaItem.url_endpoint"
+    (openModalEvent)="openModal($event)">
+  </app-media-item-fullsize>
+</div>
+<ng-template #spinner>
+  <app-spinner></app-spinner>
+</ng-template>

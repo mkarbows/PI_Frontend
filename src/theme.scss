@@ -1,0 +1,352 @@
+@import '~@angular/material/theming';
+@import './colors.scss';
+@include mat-core();
+
+// Define a mixin that accepts a theme and outputs the theme-specific styles.
+@mixin delta-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .mat-input-element:disabled,
+  .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+    color:  rgb(75, 75, 75);
+  }
+
+  .primary-background-color {
+    background-color: mat-color($primary);
+  }
+
+  .primary-color {
+    color: mat-color($primary);
+  }
+
+  .accent-background-color {
+    background-color: mat-color($accent);
+  }
+
+  .accent-color {
+    color: mat-color($accent);
+  }
+
+  .foreground-text {
+    color: mat-color($foreground, text);
+  }
+
+  .foreground-disabled-text {
+    color: mat-color($foreground, disabled);
+  }
+
+  .foreground-hint-text {
+    color: mat-color($foreground, hint-text);
+  }
+
+  .foreground-secondary-text {
+    color: mat-color($foreground, secondary-text);
+  }
+
+  .foreground-icon {
+    color: mat-color($foreground, icon);
+  }
+
+  .foreground-divider {
+    color: mat-color($foreground, divider);
+  }
+
+  .background-card {
+    background-color: mat-color($background, card);
+  }
+
+  .background-background {
+    background-color: mat-color($background, background);
+  }
+
+  .background-app-bar {
+    background-color: mat-color($background, app-bar);
+  }
+
+  th.mat-header-cell {
+    text-align: center !important;
+  }
+
+  th.mat-header-cell:first-of-type {
+    padding-left: 0 !important;
+  }
+
+  th.mat-header-cell:last-of-type {
+    padding-right: 24px;
+    text-align: left !important;
+}
+
+  .mat-tab-label {
+    color: rgb(102, 102, 102);
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .mat-tab-label-active {
+    color: mat-color($accent);
+    font-weight: bold;
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: mat-color($accent);
+  }
+
+  .mat-tab-label.mat-tab-disabled {
+    color: rgb(173, 173, 173);
+  }
+
+  .mat-tab-link {
+    color: mat-color($accent);
+    font-size: 20px;
+    font-weight: normal;
+
+    @media only screen and (max-width: 321px) {
+      font-size: 12px;
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+
+  .mat-tab-link-active {
+    color: mat-color($accent);
+    font-weight: bold;
+  }
+
+  .mat-tab-nav-bar .mat-ink-bar {
+    background-color: mat-color($accent);
+  }
+
+  .mat-tab-link:focus {
+    font-weight: bold;
+  }
+
+  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: mat-color($accent);
+  }
+
+  .mat-tab-nav-bar {
+    background: mat-color($background, card);
+  }
+
+  .mat-primary .mat-pseudo-checkbox-checked {
+    background: mat-color($accent);
+  }
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+    color: mat-color($accent);
+  }
+  .mat-calendar-body-selected {
+    background-color: mat-color($accent);
+  }
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: mat-color($accent);
+  }
+  .mat-input-element {
+    caret-color: mat-color($accent);
+  }
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    color: mat-color($accent);
+    background-color: mat-color($accent);
+  }
+  .mat-datepicker-toggle-active {
+    color: mat-color($accent);
+  }
+
+  .enter-portal{
+    color: #ffffff;
+    background: mat-color($primary);
+    cursor: pointer;
+  }
+
+  .enter-portal:hover{
+    color: mat-color($primary);
+    background: mat-color($background, card);
+    cursor: pointer;
+  }
+
+  .title, .text {
+    color: mat-color($foreground, card);
+    opacity: 0.75;
+  }
+
+  .thumbnail-title {
+    position: absolute;
+    bottom: 0;
+    background: mat-color($background, card);
+    width: 100%;
+    margin: 0;
+    padding: 2px;
+  }
+
+  .thumbnail-container{
+    border-style: solid;
+    border-width: 2px;
+    border-color: mat-color($primary, lighter-contrast);
+    background: mat-color($background, background);
+    border-radius: 4px;
+    z-index: 1;
+  }
+
+  .media-item-hover, .thumbnail-container:hover {
+    color: mat-color($background);
+    border-style: solid;
+    border-width: 2px;
+    border-color: mat-color($primary, lighter-contrast);
+    background: mat-color($warn);
+  }
+
+  .item-container:hover {
+    color: mat-color($background, card);
+    background: mat-color($accent);
+    cursor: pointer;
+  }
+
+  tr.item-thumb-drawing-row:hover,
+  tr.item-thumb-ca-row:hover,
+  tr.item-thumb-specification-row:hover {
+    color: mat-color($background);
+    background: mat-color($warn);
+    cursor: pointer;
+  }
+
+  /* necessary to get hover CSS to be applied correctly */
+  tr.item-thumb-drawing-row > td, tr.item-thumb-ca-row > td,
+  tr.item-thumb-specification-row > td {
+    color: inherit;
+  }
+
+  td.mat-cell, th.mat-header-cell {
+    border-bottom-color: mat-color($primary, lighter-contrast);
+  }
+
+  .mat-cell, .mat-header-cell {
+    border-bottom-width: 2px !important;
+  }
+
+  .mat-tab-label-active {
+    color: mat-color($accent);
+    font-weight: bold;
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: mat-color($accent);
+  }
+
+  .mat-card {
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: mat-color($background, card);
+  }
+
+  .sticky-header {
+    background-color: mat-color($background, card);
+  }
+
+  .mat-card p {
+    color: mat-color($accent);
+  }
+
+  .mat-list-base, .mat-list-item, .mat-list-item-content {
+    padding-left: 0 !important;
+  }
+
+  .mat-tab-label-active {
+    color: mat-color($accent);
+    font-weight: bold;
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: mat-color($accent);
+  }
+
+  .esri-widget--button {
+    background-color: mat-color($background, card);
+    color: mat-color($foreground, text);
+  }
+
+  .esri-widget--button:hover {
+    background-color: mat-color($background, app-bar) !important;
+    color: mat-color($foreground, text);
+  }
+
+  .esri-disabled span {
+    color: mat-color($foreground, disabled-text) !important;
+  }
+
+  .mat-paginator-range-label {
+    font-size: 15px;
+  }
+
+  .mat-progress-bar-fill::after {
+    background-color: mat-color($accent);
+  }
+
+  .mat-progress-bar {
+    border-radius: 10px;
+  }
+
+  .mat-table {
+    min-width: 100%;
+  }
+
+  .downloadButton,
+  .previewButton {
+    background-color: mat-color($accent);
+    color: white;
+  }
+
+  @media only screen and (min-width: 1440px) and (max-width: 1536px) {
+    .mat-form-field {
+      width: 170px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .mat-form-field {
+      width: 140px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .mat-form-field {
+      width: 100px;
+    }
+  }
+}
+
+// Define the default theme
+$delta-light-primary: mat-palette($delta-purple, 700, 500, 900);
+$delta-light-accent:  mat-palette($delta-pink, 700, 500, 900);
+$delta-light-warn: mat-palette($delta-pink, 100);
+$deltalax-light-theme:   mat-light-theme($delta-light-primary, $delta-light-accent, $delta-light-warn);
+
+// Include the default theme styles.
+@include angular-material-theme($deltalax-light-theme);
+@include delta-theme($deltalax-light-theme);
+
+
+// Define an alternate dark theme.
+$delta-dark-primary: mat-palette($delta-purple, 300, 100, 400);
+$delta-dark-accent: mat-palette($delta-pink, 300, 100, 400);
+$delta-dark-warn: mat-palette($delta-pink, 500);
+$deltalax-dark-theme: mat-dark-theme($delta-dark-primary, $delta-dark-accent, $delta-dark-warn);
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.deltalax-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.deltalax-dark-theme {
+  @include angular-material-theme($deltalax-dark-theme);
+  @include delta-theme($deltalax-dark-theme);
+
+  .mat-input-element:disabled,
+  .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+    color: rgb(230, 230, 230);
+  }
+
+}

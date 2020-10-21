@@ -1,0 +1,20 @@
+.specification-division {
+  float: left;
+  padding-top: 15px;
+  padding-left: 15px;
+  width: 160px;
+}
+
+.mat-form-field {
+  width: 160px;
+}
+
+item-select-xs {
+  width: 140px;
+}
+
+@media only screen and (max-width: 959px) {
+  .item-select-xs {
+    width: 70px;
+  }
+}

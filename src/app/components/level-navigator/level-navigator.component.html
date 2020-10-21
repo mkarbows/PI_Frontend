@@ -1,0 +1,16 @@
+<div class="esri-widget level-navigator">
+  <div class="esri-widget--button"
+  role="button"
+  tabindex="0"
+  title="Change level: {{level.level_number}}"
+  [ngClass]="{'level-selected': isSelected(level) }"
+  (click)="changeLevel(level)"
+  *ngFor="let level of levels">
+    <span aria-hidden="true">
+      {{ level.level_number }}
+    </span>
+    <span class="esri-icon-font-fallback-text">
+      Change level: {{ level.level_number }}
+    </span>
+  </div>
+</div>

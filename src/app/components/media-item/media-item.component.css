@@ -1,0 +1,19 @@
+:host {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+.thumbnail-img {
+  object-fit: cover;
+  height: 95%;
+  width: 100%;
+}
+.thumbnail-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  height: 20px;
+  background: none;
+}

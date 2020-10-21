@@ -1,0 +1,21 @@
+.dashParent {
+    height: calc(100% - 64px - 80px);
+}
+
+@media only screen and (max-width: 599px) {
+  .dashParent {
+    height: calc(100% - 64px - 42px);
+  }
+}
+
+.dashChild {
+    height: 100%;
+}
+
+.mat-tab-body-content {
+  height: 0;
+}
+
+.map-mobile {
+  height: 400px;
+}

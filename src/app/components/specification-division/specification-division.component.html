@@ -1,0 +1,10 @@
+<div class="specification-division">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      DIVISION
+    </mat-label>
+    <mat-select [(value)]="selectedDivision" (selectionChange)="emitChangeDivision($event)">
+      <mat-option *ngFor="let type of specificationDivisionFilters" [value]="type.filter">{{ type.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

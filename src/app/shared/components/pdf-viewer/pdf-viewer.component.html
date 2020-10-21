@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+  <ngx-extended-pdf-viewer
+    src="{{data.stream}}"
+    [height]="'75vh'"
+    [useBrowserLocale]="true"
+    [showZoomButtons]="true"
+    [showBookmarkButton]="false"
+    [showFindButton]="false"
+    [showOpenFileButton]="false"
+    [showDownloadButton]="true"
+    [showPresentationModeButton]="true"
+    [mobileFriendlyZoom]="'125%'">
+  </ngx-extended-pdf-viewer>
+</div>

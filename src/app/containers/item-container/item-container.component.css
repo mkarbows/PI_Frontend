@@ -1,0 +1,12 @@
+.item-type-paging {
+  padding-bottom: 70px;
+}
+
+.thumbnail-card-holder {
+  padding-top: 10px;
+}
+
+.table-container {
+  height: calc(100% - 75px);
+  overflow: auto;
+}

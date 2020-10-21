@@ -1,0 +1,23 @@
+<app-map
+  [mapConfig]="mapConfig"
+  [segments]="segments$ | async"
+  [mapData]="mapData$ | async"
+  [currentItemSegments]="currentItemSegments$ | async"
+  [mediaItem]="mediaItem$ | async"
+  [selectedItemType]="selectedItemType$ | async"
+  [mediaItemHover]="mediaItemHover$ | async"
+  [hoveredItemSegments]="hoveredItemSegments$ | async"
+  [selectedNavType]="selectedNavType$ | async"
+  [zoomToSelection]="zoomToSelection$ | async"
+  [resetMapInitialState]="resetMapInitialState$ | async"
+  [levels]="levels$ | async"
+  [darkMode]="darkMode$ | async"
+  [filteredSegment]="filteredSegment$ | async"
+  (mapInitialState)="alertMapInitialState($event)"
+  (mapSelectSegment)="selectMapSegmentAlert($event)"
+  (selectItem)="selectMapMarker($event)"
+  (mapMarkerHover)="mapMarkerHoverAlert($event)"
+  (mapLoaded)="mapLoadedEvent($event)"
+  (setZoomToSelection)="zoomToSelectionAlert($event)"
+  (changePage)="changePageAlert($event)">
+</app-map>

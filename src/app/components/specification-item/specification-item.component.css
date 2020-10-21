@@ -1,0 +1,117 @@
+table .item-thumb-specification th {
+  text-align: center;
+  padding-left: 20px !important;
+  padding-right: 20px;
+}
+
+tr.item-thumb-specification-row > td {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+th.mat-header-cell:last-of-type {
+  text-align: center !important;
+}
+
+.item-thumb-specification-row .circle {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.item-thumb-specification-row .circle .circle-inner {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+.circle.icon-specification-00,
+.circle.icon-specification-21,
+.circle.icon-specification-43 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-specification-01,
+.circle.icon-specification-22,
+.circle.icon-specification-44 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-specification-02,
+.circle.icon-specification-23,
+.circle.icon-specification-45 {
+  background-color: rgb(123, 9, 5);
+}
+
+.circle.icon-specification-03,
+.circle.icon-specification-25,
+.circle.icon-specification-46 {
+  background-color: rgb(198, 47, 206);
+}
+
+.circle.icon-specification-04,
+.circle.icon-specification-26,
+.circle.icon-specification-48 {
+  background-color: rgb(184, 93, 70);
+}
+
+.circle.icon-specification-05,
+.circle.icon-specification-12,
+.circle.icon-specification-27 {
+  background-color: rgb(4, 135, 101);
+}
+
+.circle.icon-specification-06,
+.circle.icon-specification-13,
+.circle.icon-specification-28 {
+  background-color: rgb(58, 18, 131);
+}
+
+.circle.icon-specification-07,
+.circle.icon-specification-31,
+.circle.icon-specification-40 {
+  background-color: rgb(231, 37, 37);
+}
+
+.circle.icon-specification-08,
+.circle.icon-specification-32,
+.circle.icon-specification-41 {
+  background-color: rgb(10, 68, 43);
+}
+
+.circle.icon-specification-09,
+.circle.icon-specification-33 {
+  background-color: rgb(48, 88, 252);
+}
+
+.circle.icon-specification-10,
+.circle.icon-specification-34 {
+  background-color: rgb(83, 16, 240);
+}
+
+.circle.icon-specification-11,
+.circle.icon-specification-35 {
+  background-color: rgb(66, 65, 117);
+}
+
+.circle.icon-specification-14,
+.circle.icon-specification-42 {
+  background-color: rgb(56, 114, 115);
+}
+
+.circle.icon-specification- {
+  background-color: rgb(148, 114, 26);
+}
+
+th {
+  font-size: 11px;
+}
+
+td {
+  font-size: 13px;
+}

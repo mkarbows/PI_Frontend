@@ -1,0 +1,10 @@
+<div class="drawing-sheet-type">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      SHEET TYPE
+    </mat-label>
+    <mat-select [(value)]="selectedSheetType" (selectionChange)="emitChangeSheetType($event)">
+      <mat-option *ngFor="let type of sheetTypeFilters" [value]="type.filter">{{ type.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

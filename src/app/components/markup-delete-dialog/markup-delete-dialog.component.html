@@ -1,0 +1,5 @@
+<h1 mat-dialog-title>Are you sure you want to delete: <br/> {{ item.markups[index].title }}</h1>
+<div mat-dialog-actions>
+  <button mat-flat-button class="delete-button" color="accent" (click)="onYesClick()">Delete</button>
+  <button mat-flat-button class="cancel-button" type="button" (click)="onNoClick()">Cancel</button>
+</div>

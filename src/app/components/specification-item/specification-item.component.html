@@ -1,0 +1,47 @@
+<table mat-table class="item-thumb-specification" [dataSource]="specificationItems">
+  <!-- Division Column -->
+  <ng-container matColumnDef="division">
+    <th mat-header-cell *matHeaderCellDef>DIVISION</th>
+    <td mat-cell *matCellDef="let specificationItem">
+      <div class="circle icon-specification-{{ specificationItem.division }}">
+        <div class="circle-inner">
+          {{ specificationItem.division }}
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- Spec Number Column -->
+  <ng-container matColumnDef="spec_number">
+    <th mat-header-cell *matHeaderCellDef>SPEC NUMBER</th>
+    <td mat-cell *matCellDef="let specificationItem">{{ specificationItem.spec_number }}</td>
+  </ng-container>
+
+  <!-- Spec Title Column -->
+  <ng-container matColumnDef="spec_title">
+    <th mat-header-cell *matHeaderCellDef>SPEC TITLE</th>
+    <td mat-cell *matCellDef="let specificationItem">{{ specificationItem.spec_title }}</td>
+  </ng-container>
+
+  <!-- Discipline Column -->
+  <ng-container matColumnDef="discipline">
+    <th mat-header-cell *matHeaderCellDef>DISCIPLINE</th>
+    <td mat-cell *matCellDef="let specificationItem">{{ specificationItem.discipline.join(', ') }}</td>
+  </ng-container>
+
+  <!-- Phase Group Column -->
+  <ng-container matColumnDef="phase_group">
+    <th mat-header-cell *matHeaderCellDef>PHASE GROUP</th>
+    <td mat-cell *matCellDef="let specificationItem">{{ specificationItem.phase_group }}</td>
+  </ng-container>
+
+  <!-- Date Last Modified Column -->
+  <ng-container matColumnDef="date_last_modified">
+    <th mat-header-cell *matHeaderCellDef>DATE LAST MODIFIED</th>
+    <td mat-cell *matCellDef="let specificationItem">{{ specificationItem.time | date: "medium" }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+  <tr mat-row *matRowDef="let specificationItem; columns: columnsToDisplay" class="item-thumb-specification-row"
+    (click)="selectItem(specificationItem)"></tr>
+</table>

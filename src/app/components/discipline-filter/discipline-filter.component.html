@@ -1,0 +1,10 @@
+<div class="discipline-filter">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      DISCIPLINE
+    </mat-label>
+    <mat-select [(value)]="selectedDiscipline" (selectionChange)="emitChangeDiscipline($event)">
+      <mat-option *ngFor="let discipline of disciplineFilters" [value]="discipline.filter">{{ discipline.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,22 @@
+.mat-dialog-content {
+  margin: 0;
+  max-height: 690px;
+  max-width: 890px;
+  padding: 0;
+}
+
+.mat-card-image {
+  height: auto;
+  margin: 0;
+  max-height: 685px;
+  max-width: 890px;
+  width: auto;
+}
+
+.mat-dialog-container {
+  height: auto;
+  max-height: 700px;
+  max-width: 900px;
+  padding: 5px;
+  width: auto;
+}

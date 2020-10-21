@@ -1,0 +1,18 @@
+<app-item-nav
+  (changeNavType)="changeNavTypeAlert($event)"
+  [navTypes]="navTypes"
+  [geoDataTypes]="geoDataTypes"
+  [currentPage]="currentPage$ | async"
+  [selectedNavType]="selectedNavType$ | async"
+  [selectedItemType]="selectedItemType"
+  [selectedTerminal]="selectedTerminal"
+  [selectedPhase]="selectedPhase"
+  [selectedDiscipline]="selectedDiscipline"
+  [selectedLevel]="selectedLevel"
+  [filteredSegment]="filteredSegment"
+  [selectedStartDate]="selectedStartDate"
+  [selectedEndDate]="selectedEndDate">
+</app-item-nav>
+<mat-card id="right-panel-card" class="right-panel-card">
+  <router-outlet></router-outlet>
+</mat-card>

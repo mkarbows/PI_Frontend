@@ -1,0 +1,10 @@
+.grid-container {
+  padding-top: 10px;
+  height: calc(100% - 75px);
+}
+.media-upload-button{
+  position: fixed;
+  right: 35px;
+  bottom: 15px;
+  z-index: 1000;
+}

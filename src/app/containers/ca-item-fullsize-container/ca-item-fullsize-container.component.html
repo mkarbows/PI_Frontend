@@ -1,0 +1,31 @@
+<div *ngIf="(caItem$ | async) as caItem; else spinner" style="height: 100%;">
+  <app-fullsize-header
+    [currentEndpoint]="caItem.url_endpoint"
+    [selectedNavType]="selectedNavType"
+    [selectedNavType]="selectedNavType"
+    [selectedItemType]="selectedItemType"
+    (closeFullsizeComponent)="closeFullsize()"
+  ></app-fullsize-header>
+  <app-ca-item-fullsize
+    [caItem]="caItem"
+    [title]="caItem.title"
+    [currentEndpoint]="caItem.url_endpoint"
+    [selectedNavType]="selectedNavType"
+    [adjacentItems]="adjacentItems"
+    [selectedItemType]="selectedItemType"
+    [pagingInputs]="pagingInputs$ | async"
+    [geoDataTypes]="geoDataTypes"
+    (downloadItem)="downloadItem($event)"
+    (closeFullsizeComponent)="closeFullsize()"
+    (getNextItem)="getNextItem($event)"
+    (getNextPage)="getNextPage($event)"
+    (getPrevItem)="getPrevItem($event)"
+    (getPrevPage)="getPrevPage($event)"
+    (selectDrawingItem)="selectDrawingItemAlert($event)"
+    (selectSpecificationItem)="selectSpecificationItemAlert($event)"
+  >
+  </app-ca-item-fullsize>
+</div>
+<ng-template #spinner>
+  <app-spinner></app-spinner>
+</ng-template>

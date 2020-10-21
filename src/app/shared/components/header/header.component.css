@@ -1,0 +1,40 @@
+.mat-button{
+  font-size: 20px;
+}
+
+.header-icon {
+  padding: 0 14px;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+.live-cam-link {
+  color: white;
+  font-size: 14px;
+  padding-right: 5px;
+
+}
+
+.cam-icon {
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 414px) {
+  .mat-toolbar {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .live-cam-link {
+    display: none;
+    padding-right: 10px;
+  }
+  .cam-icon {
+    padding-right: 5px;
+  }
+  .feedbackLink-icon {
+    padding-right: 0px;
+  }
+}

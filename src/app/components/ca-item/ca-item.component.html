@@ -1,0 +1,68 @@
+<table mat-table class="item-thumb-ca" [dataSource]="caItems" (mouseleave)="emitHoverCaItem([])">
+  <!-- Sheet Type Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>TYPE</th>
+    <td mat-cell *matCellDef="let caItem">
+      <div class="circle icon-ca-{{ caItem.type | lowercase }}">
+        <div class="circle-inner">
+          {{ getTypeShort(caItem.type) | uppercase }}
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- Drawing Number Column -->
+  <ng-container matColumnDef="ca_number">
+    <th mat-header-cell *matHeaderCellDef>CA NUMBER</th>
+    <td mat-cell *matCellDef="let caItem">{{ caItem.ca_number }}</td>
+  </ng-container>
+
+  <!-- Drawing Title Column -->
+  <ng-container matColumnDef="ca_title">
+    <th mat-header-cell *matHeaderCellDef>CA TITLE</th>
+    <td mat-cell *matCellDef="let caItem">{{ caItem.title }}</td>
+  </ng-container>
+
+  <!-- geoData1 Column -->
+  <ng-container matColumnDef="geoData1">
+    <th mat-header-cell *matHeaderCellDef>{{ geoDataTypes.geoData1.toUpperCase() }}</th>
+    <td mat-cell *matCellDef="let caItem">{{ caItem.geodata[geoDataTypes.geoData1] }}</td>
+  </ng-container>
+
+  <!-- Level Column -->
+  <ng-container matColumnDef="level_number">
+    <th mat-header-cell *matHeaderCellDef>LEVEL</th>
+    <td mat-cell *matCellDef="let caItem">{{ caItem.level_number.join(', ') }}</td>
+  </ng-container>
+
+  <!-- Phase Column -->
+  <ng-container matColumnDef="phase">
+    <th mat-header-cell *matHeaderCellDef>PHASE</th>
+    <td mat-cell *matCellDef="let caItem">{{ caItem.phase }}</td>
+  </ng-container>
+
+  <!-- Discipline Column -->
+  <ng-container matColumnDef="discipline">
+    <th mat-header-cell *matHeaderCellDef>DISCIPLINE</th>
+    <td mat-cell *matCellDef="let caItem" >{{ caItem.discipline.join(', ') }}</td>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>STATUS</th>
+    <td mat-cell *matCellDef="let caItem" >{{ caItem.status | titlecase }}</td>
+  </ng-container>
+
+  <!-- Time Column -->
+  <ng-container matColumnDef="time">
+    <th mat-header-cell *matHeaderCellDef>DATE & TIME</th>
+    <td mat-cell *matCellDef="let caItem">{{ caItem.time | date: "mediumDate" }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"
+    (mouseenter)="emitHoverCaItem([])"></tr>
+  <tr mat-row *matRowDef="let caItem; columns: columnsToDisplay" class="item-thumb-ca-row"
+    (click)="selectItem(caItem)"
+    (mouseenter)="emitHoverCaItem(caItem.geodata[geoDataTypes.geoData1])"
+    [routerLink]="caItem.url_endpoint"></tr>
+</table>

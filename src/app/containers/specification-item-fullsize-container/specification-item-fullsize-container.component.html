@@ -1,0 +1,31 @@
+<div *ngIf="(specificationItem$ | async) as specificationItem; else spinner" style="height: 100%;">
+  <app-fullsize-header
+    [title]="specificationItem.spec_title"
+    [currentEndpoint]="specificationItem.url_endpoint"
+    [pagingInputs]="pagingInputs$ | async"
+    [selectedNavType]="selectedNavType"
+    [selectedDivision]="selectedDivision"
+    (closeFullsizeComponent)="closeFullsize()">
+  </app-fullsize-header>
+  <app-specification-item-fullsize
+    [specificationItem]="specificationItem"
+    [apiRoot]="apiRoot"
+    (selectCaItem)="selectCaItemAlert($event)"
+    [currentEndpoint]="specificationItem.url_endpoint"
+    (openPdfViewerEvent)="openPdfViewer($event)"
+    [pagingInputs]="pagingInputs$ | async"
+    [selectedNavType]="selectedNavType"
+    [selectedDivision]="selectedDivision"
+    [adjacentItems]="adjacentItems"
+    (closeFullsizeComponent)="closeFullsize()"
+    (getNextItem)="getNextItem($event)"
+    (getNextPage)="getNextPage($event)"
+    (getPrevItem)="getPrevItem($event)"
+    (getPrevPage)="getPrevPage($event)">
+  </app-specification-item-fullsize
+  >
+</div>
+<ng-template #spinner>
+  <app-spinner></app-spinner>
+</ng-template>
+

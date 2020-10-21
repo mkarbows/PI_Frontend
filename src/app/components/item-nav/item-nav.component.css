@@ -1,0 +1,24 @@
+.nav-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.tab-link {
+  min-width: 25% !important;
+  opacity: 1;
+}
+
+.mat-tab-link:focus {
+  font-weight: normal;
+}
+
+.mat-tab-label-active {
+  font-weight: bold !important;
+}
+
+.mat-tab-link:focus:not(.mat-tab-disabled) {
+  background: none !important;
+}

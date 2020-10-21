@@ -1,0 +1,103 @@
+table .item-thumb-drawing th {
+  text-align: center;
+  padding-left: 20px !important;
+  padding-right: 20px;
+}
+
+tr.item-thumb-drawing-row > td {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+th.mat-header-cell:last-of-type {
+  text-align: center !important;
+}
+
+.item-thumb-drawing-row .circle {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.item-thumb-drawing-row .circle .circle-inner {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+.circle.icon-drawing-0 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-drawing-1 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-drawing-2 {
+  background-color: rgb(123, 9, 5);
+}
+
+.circle.icon-drawing-3 {
+  background-color: rgb(198, 47, 206);
+}
+
+.circle.icon-drawing-4 {
+  background-color: rgb(184, 93, 70);
+}
+
+.circle.icon-drawing-5 {
+  background-color: rgb(4, 135, 101);
+}
+
+.circle.icon-drawing-6 {
+  background-color: rgb(58, 18, 131);
+}
+
+.circle.icon-drawing-7 {
+  background-color: rgb(231, 37, 37);
+}
+
+.circle.icon-drawing-8 {
+  background-color: rgb(10, 68, 43);
+}
+
+.circle.icon-drawing-9 {
+  background-color: rgb(48, 88, 252);
+}
+
+.circle.icon-drawing-12 {
+  background-color: rgb(83, 16, 240);
+}
+
+.circle.icon-drawing-1001 {
+  background-color: rgb(66, 65, 117);
+}
+
+.circle.icon-drawing-1002 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-drawing-1003 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-drawing-1004 {
+  background-color: rgb(56, 114, 115);
+}
+
+.circle.icon-drawing- {
+  background-color: rgb(148, 114, 26);
+}
+
+th {
+  font-size: 11px;
+}
+
+td {
+  font-size: 13px;
+}

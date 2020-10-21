@@ -1,0 +1,14 @@
+<ng-container *ngIf="(selectedNavType$ | async) as selectedNav">
+  <ng-container *ngIf="selectedNav === 'media'">
+    <app-media-item-fullsize-container></app-media-item-fullsize-container>
+  </ng-container>
+  <ng-container *ngIf="selectedNav === 'drawing'">
+    <app-drawing-item-fullsize-container></app-drawing-item-fullsize-container>
+  </ng-container>
+  <ng-container *ngIf="selectedNav === 'specification'">
+    <app-specification-item-fullsize-container></app-specification-item-fullsize-container>
+  </ng-container>
+  <ng-container *ngIf="selectedNav === 'ca'">
+    <app-ca-item-fullsize-container></app-ca-item-fullsize-container>
+  </ng-container>
+</ng-container>

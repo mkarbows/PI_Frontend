@@ -1,0 +1,22 @@
+<div mat-dialog-content >
+  <img mat-card-image
+    *ngIf="data.type === 'photo'"
+    alt="Photo"
+    src="{{data.stream}}"
+  />
+  <div *ngIf="data.type === 'pano'" >
+    <!-- <a-scene >
+      <a-assets>
+        <img id="panoTexture" alt="Pano"
+          src="{{this.apiRoot}}/mediafiles/{{data.url_endpoint}}/?viewer=stream"
+          crossorigin>
+      </a-assets>
+      <a-sky src="#panoTexture"></a-sky>
+    </a-scene> -->
+  </div>
+  <video *ngIf="data.type === 'video'"
+    controls poster="{{data.stream}}"
+    src="{{data.stream}}">
+    Your browser does not support the video tag.
+  </video>
+</div>

@@ -1,0 +1,10 @@
+<div class="level-filter">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      LEVEL
+    </mat-label>
+    <mat-select [(value)]="selectedLevel" (selectionChange)="emitChangeLevel($event)">
+      <mat-option *ngFor="let level of levels" [value]="level.filter">{{ level.level_number }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

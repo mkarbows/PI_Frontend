@@ -1,0 +1,57 @@
+{
+  "dashboard": "PI Dashboard",
+  "projectName": "Delta LAX",
+  "apiRoot": "/api/pi/250542-00",
+  "production": true,
+  "landingPageIMG": "./app/components/landing-page/background-img.png",
+  "mapConfig": {
+    "zoom": 16,
+    "center": [-118.406288, 33.945843],
+    "basemap": "gray-vector"
+  },
+  "externalLink": {
+    "name": "Delta Sky Way Live Cameras",
+    "path": "https://public.earthcam.net/tJ90CoLmq7TzrY396Yd88AujOPmHBFshBr_-G-7rf7s!/delta_sky_way",
+    "disabled": false
+  },
+  "feedbackLink": {
+    "path": "https://teams.microsoft.com/l/channel/19%3a8b4663a733d14cd99ed075f7f30d6592%40thread.skype/Dashboard?groupId=a348aa1b-71d3-467b-b40d-bbcb8145b64c&tenantId=4ae48b41-0137-4599-8661-fc641fe77bea",
+    "disabled": false
+  },
+  "navTypes": [
+    {
+      "label": "Media",
+      "path": "media",
+      "defaultItemType": "photo"
+    },
+    {
+      "label": "Drawings",
+      "path": "drawing",
+      "defaultItemType": "progress"
+    },
+    {
+      "label": "Specifications",
+      "path": "specification",
+      "defaultItemType": ""
+    },
+    {
+      "label": "CA",
+      "path": "ca",
+      "defaultItemType": "rfi"
+    }
+  ],
+  "geoDataTypes": {
+    "geoData1": "terminal",
+    "geoData2": "segment"
+  },
+  "auth": {
+    "clientID": "",
+    "domain": "",
+    "redirect": "",
+    "responseType": "token",
+    "audience": "",
+    "scope": "openid profile email",
+    "logoutURL": ""
+  },
+  "gaCode": ""
+}

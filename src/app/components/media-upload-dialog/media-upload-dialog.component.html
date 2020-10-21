@@ -1,0 +1,101 @@
+<div class="media-upload-container">
+<h2>Upload New Media</h2>
+<form name="mediaUploadForm" #mediaUploadForm="ngForm" (ngSubmit)="onSubmit(mediaUploadForm)">
+  <mat-form-field class="example-full-width">
+    <input matInput [ngModel]="username" name="username" placeholder="Username">
+    <mat-hint align="start">e.g. firstname.lastname</mat-hint>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Discipline</mat-label>
+    <mat-select [(value)]="discipline" class="level-dropdown">
+      <mat-option *ngFor="let discipline of disciplines"
+        [value]="discipline"
+        name="discipline"
+        (click)="setDiscipline(discipline)">
+          {{discipline}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Level</mat-label>
+    <mat-select [(value)]="level" class="level-dropdown">
+      <mat-option *ngFor="let level of levels"
+        [value]="level"
+        name="level"
+        (click)="setLevel(level)">
+          {{level}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput class="markup-title" [value]="filename" disabled
+            cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10">
+    </textarea>
+    <label class="attach-button" type="button" matSuffix>
+        <mat-icon class="label-ripple">add_photo_alternate</mat-icon>
+        <input ng2FileSelect class="none" type="file" [uploader]="uploader" (change)="onFileSelected($event)"/>
+    </label>
+  </mat-form-field>
+
+<div class="or-phone">
+  <p class="or">-- or --</p>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div ng2FileDrop
+          class="file-drop-container"
+          [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+          (fileOver)="fileOverBase($event)"
+          [uploader]="uploader"
+          class="well my-drop-zone">
+        <div class="drag-and-drop-text">Drag and drop multiple images</div>
+      </div>
+    </div>
+    <div class="col-md-9" style="margin-bottom: 10px" *ngIf="this.uploader.queue.length > 0">
+      <p class="upload-queue">Files to upload:</p>
+      <table class="table">
+        <thead class="table-header">
+        <tr class="table-header">
+          <th class="name">Name</th>
+          <th class="size">Size</th>
+          <th class="remove">Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-row" *ngFor="let item of uploader.queue">
+            <td>{{ item?.file?.name }}</td>
+            <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+            <td *ngIf="uploader.options.isHTML5">
+              <div class="progress" style="margin-bottom: 0;">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+              </div>
+            </td>
+            <td nowrap>
+              <button mat-button class="remove-button"
+                      (click)="item.remove()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="uploading">
+    Upload progress:
+    <div class="progress">
+      <mat-progress-bar mode="determinate" [value]="uploader.progress"></mat-progress-bar>
+    </div>
+  </div>
+  <p class="error"> {{ errorMessage}} </p>
+  <div>
+    <button mat-flat-button class="upload-button" color="accent" type="submit">Upload</button>
+    <button mat-flat-button class="cancel-button" type="button" (click)="onNoClick()">Cancel</button>
+  </div>
+</form>
+</div>

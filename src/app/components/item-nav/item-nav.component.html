@@ -1,0 +1,12 @@
+<nav mat-tab-nav-bar class="nav-bar">
+  <a mat-tab-link
+    class="tab-link"
+    *ngFor="let navType of navTypes"
+    (click)="emitChangeNavType(navType.path)"
+    [routerLink]="[navType.path, 1]"
+    [queryParams]="query"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="navType.path === selectedNavType">
+      {{ navType.label }}
+  </a>
+</nav>

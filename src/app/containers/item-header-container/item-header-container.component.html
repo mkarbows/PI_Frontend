@@ -1,0 +1,34 @@
+<div fxLayout="row" class="sticky-header">
+  <app-item-type
+    *ngIf="selectedNavType !== 'specification'"
+    [itemTypeFilters]="itemTypeFilters$ | async"
+    [selectedNavType]="selectedNavType"
+    [selectedItemType]="selectedItemType"
+    (changeItemType)="changeItemTypeAlert($event)"
+  ></app-item-type>
+  <app-drawing-sheet-type
+    *ngIf="selectedNavType === 'drawing'"
+    [sheetTypeFilters]="sheetTypeFilters$ | async"
+    [selectedSheetType]="selectedSheetType$ | async"
+    (changeSheetType)="changeSheetTypeAlert($event)"
+  ></app-drawing-sheet-type>
+  <app-ca-status
+    *ngIf="selectedNavType === 'ca'"
+    [caStatusFilters]="caStatusFilters$ | async"
+    [selectedCaStatus]="selectedCaStatus$ | async"
+    (changeCaStatus)="changeCaStatusAlert($event)"
+  ></app-ca-status>
+  <app-specification-division
+    *ngIf="selectedNavType === 'specification'"
+    [specificationDivisionFilters]="specificationDivisionFilters$ | async"
+    [selectedNavType]="selectedNavType"
+    [selectedDivision]="selectedDivision$ | async"
+    (changeDivision)="changeDivisionAlert($event)"
+  ></app-specification-division>
+  <app-paging
+    [pageItemCount]="pageItemCount"
+    [currentPage]="currentPage$ | async"
+    [filteredSegment]="filteredSegment"
+    (changePage)="changePageAlert($event)">
+  </app-paging>
+</div>

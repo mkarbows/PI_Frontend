@@ -1,0 +1,36 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+  
+.input-container > * {
+  width: 100%;
+}
+
+.error{
+  color: red;
+}
+
+.none {
+  display: none;
+}
+
+.label-ripple {
+  width: 24px;
+  height: 28px;
+  border-radius: 25px;
+  top: 5px;
+}
+
+.attach-button {
+  cursor: pointer;
+}
+
+.upload-button {
+  margin-right: 5px
+}
+
+.cancel-button {
+  background-color: #d4d2d2;
+  color: black;
+}

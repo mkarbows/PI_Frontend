@@ -1,0 +1,45 @@
+
+<ng-container *ngIf="selectedNavType === 'drawing'">
+  <ng-container *ngIf="drawingItems$ | async as drawingItems; else spinner">
+    <div *ngIf="drawingItems.data.length > 0; else catchNoResults">
+      <app-drawing-item
+        [drawingItems]="drawingItems.data"
+        [geoDataTypes]="geoDataTypes"
+        (selectDrawingItem)="selectDrawingItemAlert($event)"
+        (hoverDrawingItem)="hoverDrawingItemAlert($event)"
+      ></app-drawing-item>
+    </div>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="selectedNavType === 'specification'">
+  <ng-container *ngIf="specificationItems$ | async as specificationItems; else spinner">
+    <div *ngIf="specificationItems.data.length > 0; else catchNoResults">
+      <app-specification-item
+      [specificationItems]="specificationItems.data"
+      (selectSpecificationItem)="selectSpecificationItemAlert($event)"
+      ></app-specification-item>
+    </div>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="selectedNavType === 'ca'">
+  <ng-container *ngIf="caItems$ | async as caItems; else spinner">
+    <div *ngIf="caItems.data.length > 0; else catchNoResults">
+      <app-ca-item
+        [caItems]="caItems.data"
+        [geoDataTypes]="geoDataTypes"
+        (selectCaItem)="selectCaItemAlert($event)"
+        (hoverCaItem)="hoverCaItemAlert($event)"
+      ></app-ca-item>
+    </div>
+  </ng-container>
+</ng-container>
+<ng-template #catchNoResults>
+  <app-item-no-results
+    [selectedNavType]="selectedNavType"
+    [selectedItemType]="selectedItemType"
+    (resetFilters)="resetFiltersAlert()">
+  </app-item-no-results>
+</ng-template>
+<ng-template #spinner>
+  <app-spinner></app-spinner>
+</ng-template>

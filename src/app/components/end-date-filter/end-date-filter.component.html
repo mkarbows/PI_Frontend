@@ -1,0 +1,11 @@
+<div class="end-date-filter">
+  <mat-form-field floatLabel="always">
+      <input matInput [matDatepicker]="picker" placeholder="END DATE"
+        (dateChange)="emitChangeEndDate($event)"
+        [value]="displayEndDate"
+        [min]="minDate"
+        [max]="maxDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+</div>

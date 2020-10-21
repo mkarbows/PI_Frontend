@@ -1,0 +1,120 @@
+.media-upload-container {
+  max-height: 80vh;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+}
+.example-full-width {
+  width: 95%;
+}
+td {
+  padding-right: 8px;
+}
+.upload-button {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.attach-button {
+  cursor: pointer;
+}
+.cancel-button {
+  background-color: #b1b1b1;
+  color: black;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.none {
+  display: none;
+}
+.custom-component-drop-zone {
+  width: 300px;
+  height: 300px;
+}
+.my-drop-zone {
+  border: 2px lightgray;
+  border-style: dashed;
+  border-radius: 15px;
+  height: 110px;
+}
+.nv-file-over {
+  border: dotted 3px #c6206a;
+}
+.upload_queue {
+  font-size: 12px;
+}
+.table {
+  width: 100%
+}
+.table-header table th {
+  font-size: 14px;
+  width: 100%;
+  display: initial;
+  text-align: left;
+}
+.table-class table th {
+  text-align: left;
+}
+.name {
+  float: left
+}
+.size {
+  margin-left: 2px;
+  text-align: left;
+}
+.remove {
+  margin-left: 2px;
+  margin-right: -105px;
+  float: right;
+}
+.table-row {
+  font-size: 14px;
+  width: 100%;
+}
+.drag-and-drop-text {
+  font-size: 14px;
+  color: #b1b1b1;
+  text-align: center;
+  padding-top: 4.5vh;
+}
+.or {
+  margin-top: 5px;
+  text-align: center;
+  color: #b1b1b1
+}
+@media screen and (min-width: 300px) and (max-width: 1050px) {
+  .or-phone {
+    display: none;
+    visibility: hidden;
+  }
+}
+.select-files {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+}
+.mat-select-panel {
+  overflow:visible !important;
+}
+.level-dropdown {
+  max-height: none!important;
+}
+.remove-button {
+  float: right;
+}
+.label-ripple {
+  font-size: 26px;
+  padding-left: 17vw;
+}
+@media screen and (min-width: 300px) and (max-width: 1050px) {
+.col-md-3{
+    visibility: hidden;
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+<div class="item-type">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      {{ selectedNavType.toUpperCase() }} TYPE
+    </mat-label>
+    <mat-select [(value)]="selectedItemType" (selectionChange)="emitChangeItemType($event)">
+      <mat-option *ngFor="let type of itemTypeFilters" [value]="type.filter">{{ type.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

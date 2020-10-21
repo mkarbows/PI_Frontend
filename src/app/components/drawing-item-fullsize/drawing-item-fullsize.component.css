@@ -1,0 +1,380 @@
+.drawing-data {
+  text-align: left;
+}
+
+.two-halves {
+  display: block;
+}
+
+.quarters-then-half {
+  display: block;
+}
+
+.half-then-quarters {
+  display: block;
+}
+
+.full-width {
+  display: block;
+  width: calc(100% - 15px);
+}
+
+.two-halves > :first-child {
+  width: calc(50% - 10px);
+}
+
+.two-halves > :last-child {
+  width: calc(50% - 10px);
+  margin-left: 5px;
+}
+
+.half-then-quarters > :first-child {
+  width: calc(50% - 10px);
+  margin-right: 5px;
+}
+
+.half-then-quarters > :last-child {
+  width: calc(50% - 10px);
+  display: inline-block;
+}
+
+.half-then-quarters > :last-child > :first-child {
+  width: calc(50% - 5px);
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.half-then-quarters > :last-child > :last-child {
+  width: calc(50% - 5px);
+}
+
+.quarters-then-half > :last-child {
+  width: calc(50% - 10px);
+  margin-left: 0px;
+}
+
+.quarters-then-half > :first-child {
+  width: calc(50% - 10px);
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.quarters-then-half > :first-child > :first-child {
+  width: calc(50% - 5px);
+}
+
+.quarters-then-half > :first-child > :last-child {
+  width: calc(50% - 5px);
+  margin-left: 5px;
+}
+
+.full-width > :only-child {
+  width: 100%;
+}
+.copy-path-button {
+  width: 40px !important;
+  float: right;
+}
+
+.copy-path-symbol {
+  font-size: 24px !important;
+}
+
+.icon-center {
+  align-items: center;
+}
+
+.upload-button{
+    height: 40px !important;
+    width: 40px !important;
+    float: right;
+  }
+
+.upload-symbol{
+  font-size: 24px !important;
+}
+
+table .markup-item th {
+  text-align: center;
+  padding-left: 10px !important;
+  padding-right: 10px;
+}
+
+.markup-item{
+  min-width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+tr.markup-item-row > td {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  width: 20%;
+}
+
+.markupHeader {
+  text-align: center !important;
+}
+
+.fullsize-container {
+  min-height: 0;
+  /* overflow-y: auto; */
+}
+
+mat-form-field {
+  min-width: 0;
+}
+
+.image-placeholder { /* Using this to represent future content and keep the UI from bouncing around*/
+  height: 100%;
+  position: relative;
+  width: auto;
+}
+
+.file-path {
+  font-size: 13px;
+  font-style: italic;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  padding-top: 12px;
+  float: left;
+}
+
+.markup-upload {
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.not-found {
+  font-size: 13px;
+  font-weight: 500;
+  padding-top: 12px;
+}
+
+.circle {
+  border-radius: 50%;
+  margin: 4px auto;
+  height: 180px;
+  width: 180px;
+}
+
+.item-associated-ca .circle {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.item-associated-ca .circle .circle-inner {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+tr.item-associated-ca-row:hover {
+  cursor: pointer;
+}
+
+.right-button{
+  float: right;
+  vertical-align: middle;
+}
+
+.left-button {
+  float: left;
+  vertical-align: middle;
+}
+
+.circle.icon-drawing-0 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-drawing-1 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-drawing-2 {
+  background-color: rgb(123, 9, 5);
+}
+
+.circle.icon-drawing-3 {
+  background-color: rgb(198, 47, 206);
+}
+
+.circle.icon-drawing-4 {
+  background-color: rgb(184, 93, 70);
+}
+
+.circle.icon-drawing-5 {
+  background-color: rgb(4, 135, 101);
+}
+
+.circle.icon-drawing-6 {
+  background-color: rgb(58, 18, 131);
+}
+
+.circle.icon-drawing-7 {
+  background-color: rgb(231, 37, 37);
+}
+
+.circle.icon-drawing-8 {
+  background-color: rgb(10, 68, 43);
+}
+
+.circle.icon-drawing-9 {
+  background-color: rgb(48, 88, 252);
+}
+
+.circle.icon-drawing-12 {
+  background-color: rgb(83, 16, 240);
+}
+
+.circle.icon-drawing-1001 {
+  background-color: rgb(66, 65, 117);
+}
+
+.circle.icon-drawing-1002 {
+  background-color: rgb(113, 17, 75);
+}
+
+.circle.icon-drawing-1003 {
+  background-color: rgb(78, 56, 11);
+}
+
+.circle.icon-drawing-1004 {
+  background-color: rgb(56, 114, 115);
+}
+
+.circle.icon-drawing- {
+  background-color: rgb(148, 114, 26);
+}
+
+.circle .circle-inner {
+  font-size: 60pt;
+  font-weight: bold;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 180px;
+  height: 180px;
+}
+
+.img-spinner {
+  margin: auto;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+.action-buttons{
+  margin-bottom: 8px;
+}
+
+.circle.icon-ca-rfi {
+  background-color: #8F98E5;
+
+}
+.circle.icon-ca-submittal {
+  background-color: #da750180;
+}
+
+.drawing-card img {
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.download-preview-buttons {
+  margin-top: 5px;
+}
+
+.downloadButton {
+  margin-right: 5px;
+}
+
+.drawing-number {
+  color: #D12B7D;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.title {
+  color: rgb(27, 27, 27);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  line-height: 27px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+
+.right-button {
+  line-height: 20px;
+  padding: 7px !important;
+  width: 20px;
+  height: 100px !important;
+  color: #4b4b4b;
+}
+
+.left-button {
+  line-height: 20px;
+  padding: 7px !important;
+  width: 20px;
+  height: 100px !important;
+  color: #4b4b4b;
+}
+
+.prevnext {
+  transform: scale(5);
+}
+
+div.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.top-container {
+  width: 100%;
+}
+
+.right-tooltip {
+  float: right;
+  min-width: 20px;
+}
+
+.left-tooltip {
+  float: left;
+  min-width: 20px;
+}
+
+.left-button-container {
+  height: 100%;
+  float: left;
+  width: 10%;
+}
+
+.right-button-container {
+  height: 100%;
+  float: right;
+  width: 10%;
+}
+
+.image-container {
+  height: 200px;
+  width: auto;
+}

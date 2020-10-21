@@ -1,0 +1,52 @@
+.header-filter-container {
+  height: 80px;
+  padding: 16px;
+  overflow: auto;
+}
+
+.header-filter-form-field {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.terminal,
+.phase,
+.discipline,
+.levels,
+.segment,
+.startDate,
+.endDate {
+  height: 45px;
+  padding-left: 20px;
+}
+
+.startDate {
+  padding-left: 10px;
+}
+
+.endDate {
+  padding-left: 15px;
+}
+
+.zoom {
+  margin-right: 20px;
+  margin-left:20px;
+}
+
+@media only screen and (max-width: 959px) {
+  .header-filter-container {
+    height: 100%;
+  }
+
+  .terminal,
+  .phase,
+  .discipline,
+  .levels,
+  .segment,
+  .startDate,
+  .endDate,
+  .zoom {
+    padding-top: 5px;
+  }
+}

@@ -1,0 +1,10 @@
+<div class="phase-filter">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      PHASE
+    </mat-label>
+    <mat-select [(value)]="selectedPhase" (selectionChange)="emitChangePhase($event)">
+      <mat-option *ngFor="let phase of phaseFilters" [value]="phase.filter">{{ phase.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

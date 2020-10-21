@@ -1,0 +1,10 @@
+<div class="ca-status">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      STATUS
+    </mat-label>
+    <mat-select [(value)]="selectedCaStatus" (selectionChange)="emitChangeCaStatus($event.value)">
+      <mat-option *ngFor="let status of caStatusFilters" [value]="status.filter">{{ status.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

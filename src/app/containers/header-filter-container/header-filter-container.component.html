@@ -1,0 +1,148 @@
+<div class="header-filter-container" fxLayout="row" fxLayoutAlign="start center" fxHide fxShow.gt-sm>
+  <app-reset-filters
+    [selectedTerminal]="selectedTerminal$ | async"
+    [selectedPhase]="selectedPhase$ | async"
+    [selectedDiscipline]="selectedDiscipline$ | async"
+    [selectedLevel]="selectedLevel$ | async"
+    [filteredSegment]="filteredSegment$ | async"
+    [selectedStartDate]="selectedStartDate$ | async"
+    [selectedEndDate]="selectedEndDate$ | async"
+    (resetFilters)="resetFiltersAlert()">
+  </app-reset-filters>
+
+  <app-terminal-filter
+    [terminalFilters]="terminalFilters$ | async"
+    [selectedTerminal]="selectedTerminal$ | async"
+    [geoDataTypes]="geoDataTypes"
+    (changeTerminalSelection)="changeTerminalSelectionAlert($event)"
+    class="terminal">
+  </app-terminal-filter>
+
+  <app-segment-filter
+    [segmentFilters]="segmentFilters$ | async"
+    [filteredSegment]="filteredSegment$ | async"
+    [geoDataTypes]="geoDataTypes"
+    (changeSegmentSelection)="changeSegmentSelectionAlert($event)"
+    class="segment">
+  </app-segment-filter>
+
+  <app-phase-filter
+    [phaseFilters]="phaseFilters$ | async"
+    [selectedPhase]="selectedPhase$ | async"
+    (changePhaseSelection)="changePhaseSelectionAlert($event)"
+    class="phase">
+  </app-phase-filter>
+
+  <app-discipline-filter
+    [disciplineFilters]="disciplineFilters$ | async"
+    [selectedDiscipline]="selectedDiscipline$ | async"
+    (changeDiscplineSelection)="changeDiscplineSelectionAlert($event)"
+    class="discipline">
+  </app-discipline-filter>
+
+  <app-levels-filter
+    [levels]="levels$ | async"
+    [selectedLevel]="selectedLevel$ | async"
+    (changeLevelSelection)="changeLevelSelectionAlert($event)"
+    class="levels">
+  </app-levels-filter>
+
+  <app-start-date-filter
+    [selectedStartDate]="selectedStartDate$ | async"
+    [selectedEndDate]="selectedEndDate$ | async"
+    (changeStartDateSelection)="changeStartDateSelectionAlert($event)"
+    class="startDate">
+  </app-start-date-filter>
+
+  <app-end-date-filter
+    [selectedEndDate]="selectedEndDate$ | async"
+    [selectedStartDate]="selectedStartDate$ | async"
+    (changeEndDateSelection)="changeEndDateSelectionAlert($event)"
+    class="endDate">
+  </app-end-date-filter>
+
+  <!-- <app-zoom-to-selection
+    (setZoomToSelection)="zoomToSelectionAlert($event)"
+    class="zoom">
+  </app-zoom-to-selection> -->
+</div>
+
+<!-- md and smaller layout -->
+<mat-accordion fxHide fxShow.sm fxShow.xs>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filters
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="header-filter-container" fxLayout="column" fxLayoutAlign="start center">
+      <app-reset-filters
+        [selectedTerminal]="selectedTerminal$ | async"
+        [selectedPhase]="selectedPhase$ | async"
+        [selectedDiscipline]="selectedDiscipline$ | async"
+        [selectedLevel]="selectedLevel$ | async"
+        [filteredSegment]="filteredSegment$ | async"
+        [selectedStartDate]="selectedStartDate$ | async"
+        [selectedEndDate]="selectedEndDate$ | async"
+        (resetFilters)="resetFiltersAlert()">
+      </app-reset-filters>
+
+      <app-terminal-filter
+        [terminalFilters]="terminalFilters$ | async"
+        [selectedTerminal]="selectedTerminal"
+        [geoDataTypes]="geoDataTypes"
+        (changeTerminalSelection)="changeTerminalSelectionAlert($event)"
+        class="terminal">
+      </app-terminal-filter>
+
+      <app-segment-filter
+        [segmentFilters]="segmentFilters$ | async"
+        [filteredSegment]="filteredSegment$ | async"
+        [geoDataTypes]="geoDataTypes"
+        (changeSegmentSelection)="changeSegmentSelectionAlert($event)"
+        class="segment">
+      </app-segment-filter>
+
+      <app-phase-filter
+        [phaseFilters]="phaseFilters$ | async"
+        [selectedPhase]="selectedPhase"
+        (changePhaseSelection)="changePhaseSelectionAlert($event)"
+        class="phase">
+      </app-phase-filter>
+
+      <app-discipline-filter
+        [disciplineFilters]="disciplineFilters$ | async"
+        [selectedDiscipline]="selectedDiscipline"
+        (changeDiscplineSelection)="changeDiscplineSelectionAlert($event)"
+        class="discipline">
+      </app-discipline-filter>
+
+      <app-levels-filter
+        [levels]="levels$ | async"
+        [selectedLevel]="selectedLevel"
+        (changeLevelSelection)="changeLevelSelectionAlert($event)"
+        class="levels">
+      </app-levels-filter>
+
+      <app-start-date-filter
+        [selectedStartDate]="selectedStartDate$ | async"
+        [selectedEndDate]="selectedEndDate$ | async"
+        (changeStartDateSelection)="changeStartDateSelectionAlert($event)"
+        class="startDate">
+      </app-start-date-filter>
+
+      <app-end-date-filter
+        [selectedEndDate]="selectedEndDate$ | async"
+        [selectedStartDate]="selectedStartDate$ | async"
+        (changeEndDateSelection)="changeEndDateSelectionAlert($event)"
+        class="endDate">
+      </app-end-date-filter>
+
+      <!-- <app-zoom-to-selection
+        (setZoomToSelection)="zoomToSelectionAlert($event)"
+        class="zoom">
+      </app-zoom-to-selection> -->
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

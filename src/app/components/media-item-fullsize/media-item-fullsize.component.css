@@ -1,0 +1,186 @@
+.media-data {
+  text-align: left;
+}
+
+.two-halves {
+  display: block;
+}
+
+.quarters-then-half {
+  display: block;
+}
+
+.half-then-quarters {
+  display: block;
+}
+
+.full-width {
+  display: block;
+  width: calc(100% - 15px);
+}
+
+.two-halves > :first-child {
+  width: calc(50% - 10px);
+}
+
+.two-halves > :last-child {
+  width: calc(50% - 10px);
+  margin-left: 5px;
+}
+
+.half-then-quarters > :first-child {
+  width: calc(50% - 10px);
+  margin-right: 5px;
+}
+
+.half-then-quarters > :last-child {
+  width: calc(50% - 10px);
+  display: inline-block;
+}
+
+.half-then-quarters > :last-child > :first-child {
+  width: calc(50% - 5px);
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
+.half-then-quarters > :last-child > :last-child {
+  width: calc(50% - 5px);
+}
+
+.quarters-then-half > :last-child {
+  width: calc(50% - 10px);
+  margin-left: 0px;
+}
+
+.quarters-then-half > :first-child {
+  width: calc(50% - 10px);
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.quarters-then-half > :first-child > :first-child {
+  width: calc(50% - 5px);
+}
+
+.quarters-then-half > :first-child > :last-child {
+  width: calc(50% - 5px);
+  margin-left: 5px;
+}
+
+.full-width > :only-child {
+  width: 100%;
+}
+
+.copy-path-button {
+  width: 40px !important;
+  float: right;
+}
+
+.copy-path-symbol {
+  font-size: 24px !important;
+}
+
+.fullsize-container {
+  min-height: 0;
+  /* overflow-y: auto; */
+}
+
+
+mat-form-field {
+  min-width: 0;
+}
+
+.image-placeholder { /* Using this to represent future content and keep the UI from bouncing around*/
+  height: 100%;
+  position: relative;
+  width: auto;
+}
+
+.image-container {
+  height: 39.5vh;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.image-card {
+  height: 100%;
+  position: relative;
+  width: auto;
+}
+
+.image-card img {
+  cursor: pointer;
+}
+
+.image-card img, video {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.action-buttons{
+  margin-bottom: 8px;
+}
+.right-button{
+  float: right;
+  vertical-align: middle;
+}
+.left-button {
+  float: left;
+  vertical-align: middle;
+}
+.image-prev-next-container {
+  height: 39.5vh;
+  width: 100%;
+}
+.downloadButton {
+  margin-right: 5px;
+}
+.title {
+  color: rgb(27, 27, 27);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+  line-height: 27px;
+  margin-bottom: 10px;
+}
+
+
+.right-button {
+  line-height: 20px;
+  padding: 7px !important;
+  width: 50px;
+  height: 100px !important;
+  color: #4b4b4b;
+}
+
+.left-button {
+  line-height: 20px;
+  padding: 7px !important;
+  width: 50px;
+  height: 100px !important;
+  color: #4b4b4b;
+}
+
+.prevnext {
+  transform: scale(5);
+}
+
+div.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.top-container {
+  width: 100%;
+}
+
+.right-tooltip {
+  float: right;
+  min-width: 20px;
+}
+
+.left-tooltip {
+  float: left;
+  min-width: 20px;
+}

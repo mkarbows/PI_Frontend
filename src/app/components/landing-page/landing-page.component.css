@@ -1,0 +1,91 @@
+.title {
+  font: 500 25px/62px Roboto, "Helvetica Neue", sans-serif;
+  font-size: 80px;
+  margin-top: 0px;
+  padding-top: 100px;
+  max-width: 100%;
+  opacity: 1;
+}
+.landing-page {
+  overflow: auto;
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+}
+.image-layer {
+  width: 100%;
+  height: 100%;
+  background: url('./background-img.png') 50% 50% / cover no-repeat;
+  opacity: 0.5;
+}
+.transparent-layer {
+  width: 100%;
+  height: 88%;
+  position: absolute;
+}
+.text {
+  font-size: 90%;
+  font: 500 19px/32px Roboto, "Helvetica Neue", sans-serif;
+  border-radius:8px;
+  padding: 20px;
+  position: absolute;
+  height: auto;
+  bottom: 0px;
+  left: calc(50% - 50vw);
+  max-width:100%;
+  width: calc(100vw - 40px);
+  opacity: 1;
+}
+.enter-portal{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 1.8em;
+  text-align: center;
+  min-width: 190px;
+  min-height: 60px;
+  margin: 60px auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .landing-page * {
+    font-size: 1.9vw;
+    line-height: 200%;
+  }
+  .title {
+    font-size: 10vw!important;
+    line-height: 100%;
+    padding-top:25px;
+  }
+  .enter-portal{
+    margin-top:0px;
+    font-size:1.4em!important;
+  }
+  .text {
+    left: calc(50% - 50vw);
+    max-width:100%;
+    width: calc(100vw - 40px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .landing-page {
+    height: calc(100vh - 56px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .landing-page * {
+    line-height: 200%;
+  }
+  .title {
+    font-size: 10vw!important;
+    line-height: 100%;
+    padding-top:25px;
+  }
+  .enter-portal {
+    font-size: 4.7vw!important;
+    min-width: 140px;
+    min-height: 50px;
+  }
+  .text p{
+    font-size:2.4vw!important;
+  }
+}

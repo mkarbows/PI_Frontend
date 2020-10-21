@@ -1,0 +1,19 @@
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.mat-paginator-page-size .ng-star-inserted {
+  display: none;
+}
+
+/* don't think this does anything */
+div .textLayer,
+.page {
+  width: 900px;
+  height: 700px;
+}

@@ -1,0 +1,31 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L] [NC,L]
+
+RewriteRule ^(.*) /deltalax/ [NC,L]
+
+<Files .json>
+    Header unset Cache-Control
+</Files>
+
+<Files .css>
+    Header unset Cache-Control
+</Files>
+
+<Files .pdf>
+    ForceType application/octet-stream
+    Header set Content-Disposition attachment
+</Files>
+
+AuthName "Arup GIS"
+AuthType SSPI
+NTLMAuth On
+NTLMAuthoritative On
+
+<RequireAll>
+    <RequireAny>
+       require valid-user
+    </RequireAny>
+</RequireAll>

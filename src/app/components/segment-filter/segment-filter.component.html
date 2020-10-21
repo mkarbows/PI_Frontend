@@ -1,0 +1,10 @@
+<div class="segment-filter">
+  <mat-form-field class="item-select-xs" floatLabel="always">
+    <mat-label>
+      {{geoDataTypes.geoData2.toUpperCase()}}
+    </mat-label>
+    <mat-select [(value)]="filteredSegment" (selectionChange)="emitChangeSegment($event)">
+      <mat-option *ngFor="let segment of segmentFilters" [value]="segment.filter">{{ segment.title.toUpperCase() }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,28 @@
+<app-header-filter-container></app-header-filter-container>
+<div fxLayout="row" fxLayout.lt-md="column" class="dashParent">
+
+  <div fxFlex="50%" fxFill class="dashChild" fxHide fxShow.gt-sm>
+    <app-map-container fxFill></app-map-container>
+  </div>
+  <div fxFlex="50%" fxFill class="dashChild" fxHide fxShow.gt-sm>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- md and smaller layout -->
+  <mat-accordion fxHide fxShow.sm fxShow.xs>
+    <mat-expansion-panel (opened)="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Map
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="map-mobile" fxFlex="100%">
+        <app-map-container></app-map-container>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div fxFlex="95%" fxFill class="dashChild" fxHide fxShow.sm fxShow.xs>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

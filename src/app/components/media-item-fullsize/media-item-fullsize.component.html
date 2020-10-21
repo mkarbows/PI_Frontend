@@ -1,0 +1,118 @@
+<div style="height: 100%;">
+  <div class="img-prev-next-container">
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="top-container">
+      <div [class.disabled]="prevDisabled ? true : null" class="left-tooltip" matTooltip="Previous item">
+        <button mat-button class="left-button" (click)="previous()" [disabled]="prevDisabled">
+          <mat-icon class="prevnext">chevron_left</mat-icon>
+        </button>
+      </div>
+      <div [ngSwitch]="mediaItem.type" class="image-container">
+        <div *ngSwitchCase="'photo'"
+          [ngClass]="(this.isLoading)?'image-placeholder':'image-card'">
+          <img *ngIf="this.isLoading" style="height: 100%;" (click)="openModal(mediaItem)"
+            src="{{apiRoot}}/mediafiles/{{mediaItem.url_endpoint}}/?viewer=thumbnail" />
+          <img [hidden]="this.isLoading" (load)="showSpinner($event)" alt="Photo" (click)="openModal(mediaItem)"
+            src="{{mediaItem.stream}}" />
+        </div>
+
+        <div *ngSwitchCase="'pano'" id="photosphereviewer"
+          [ngClass]="(this.isLoading)?'image-placeholder':'image-card'">
+          <img *ngIf="this.isLoading" (load)="showSpinner($event)" (click)="openModal(mediaItem)"
+            src="{{apiRoot}}/mediafiles/{{mediaItem.url_endpoint}}/?viewer=thumbnail" />
+        </div>
+
+        <div *ngSwitchCase="'video'" [ngClass]="(this.isLoading)?'image-placeholder':'image-card'">
+          <video controls poster="{{apiRoot}}/mediafiles/{{mediaItem.url_endpoint}}/?viewer=thumbnail"
+            src="{{mediaItem.stream}}">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div [class.disabled]="nextDisabled ? true : null" class="right-tooltip" matTooltip="Next item">
+        <button mat-button class="right-button" (click)="next()" [disabled]="nextDisabled">
+          <mat-icon class="prevnext">chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="title">{{ mediaItem.title }}</p>
+  </div>
+  <div class="download-preview-buttons">
+    <button mat-flat-button
+      class="downloadButton"
+      (click)="downloadItem()">
+      <mat-icon>get_app</mat-icon>
+      Download
+    </button>
+    <button mat-flat-button
+      class="previewButton"
+      (click)="openModal(mediaItem)">
+      <mat-icon>zoom_out_map</mat-icon>
+      Preview
+    </button>
+  </div>
+  <br/>
+  <div class="detail-container">
+    <form class="media-data">
+      <div class="two-halves">
+        <mat-form-field>
+          <textarea matInput [placeholder]="mediaItem.discipline.length <= 1 ? 'DISCIPLINE' : 'DISCIPLINES'"
+            [value]="mediaItem.discipline.join((', ')) !== 'unknown' || mediaItem.discipline.join((', ')) !== '' ? mediaItem.discipline.join((', ')) : 'N/A'"
+            disabled aria-label="Discipline" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="1">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="TAKEN BY" [value]="mediaItem.taken_by !== null && mediaItem.taken_by != '' ? mediaItem.taken_by : 'N/A'" disabled cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+           </textarea>
+        </mat-form-field>
+      </div>
+      <div class="quarters-then-half">
+          <div>
+              <mat-form-field>
+                <textarea matInput placeholder="{{geoDataTypes.geoData2.toUpperCase()}}"
+                  [value]="mediaItem.geodata[geoDataTypes.geoData2] !== null && mediaItem.geodata[geoDataTypes.geoData2] != undefined ?
+                    mediaItem.geodata[geoDataTypes.geoData2] : 'N/A'" disabled cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+                </textarea>
+              </mat-form-field>
+              <mat-form-field>
+                <textarea matInput placeholder="LEVEL" [value]="getLayerDisplay(mediaItem) !== null && getLayerDisplay(mediaItem) != ''  ? getLayerDisplay(mediaItem) : 'N/A'" disabled cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+                </textarea>
+              </mat-form-field>
+            </div>
+          <mat-form-field>
+              <textarea matInput placeholder="BEARING" [value]="mediaItem.bearing_simple !== null && mediaItem.bearing_simple != '' ? mediaItem.bearing_simple : 'N/A'"
+                disabled cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="1">
+              </textarea>
+            </mat-form-field>
+      </div>
+      <div class="two-halves">
+        <mat-form-field>
+          <textarea matInput [placeholder]="mediaItem.folder.length <= 1 ? 'FOLDER' : 'FOLDERS'"
+            [value]="mediaItem.folder.join(', ') !== '' ? mediaItem.folder.join(', ') : 'N/A'" disabled aria-label="Folder" cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="DATE & TIME" [value]="mediaItem.time !== null ? (mediaItem.time | date: 'medium') : 'N/A'" disabled
+            cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+        </mat-form-field>
+      </div>
+      <mat-form-field class="full-width">
+        <textarea matInput class="file-path" placeholder="FILE PATH"
+          [value]="mediaItem.file_path[0] !== null && mediaItem.file_path[0] != '' ? mediaItem.file_path[0] : 'N/A'" disabled cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10">
+      </textarea>
+      <button class="copy-path-button" (click)="copyPath(mediaItem.file_path[0])" matTooltip="Copy Path" mat-icon-button matSuffix>
+        <mat-icon class="copy-path-symbol" [disableRipple]="true">link</mat-icon>
+      </button>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

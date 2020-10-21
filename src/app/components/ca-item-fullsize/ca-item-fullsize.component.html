@@ -1,0 +1,309 @@
+<div style="height: 100%;" class="fullsize-container">
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="top-container">
+    <div [class.disabled]="prevDisabled ? true : null" class="left-tooltip" matTooltip="Previous item">
+      <button mat-button class="left-button" (click)="previous()" [disabled]="prevDisabled">
+        <mat-icon class="prevnext">chevron_left</mat-icon>
+      </button>
+    </div>
+    <div class="circle icon-ca-{{ caItem.type | lowercase }}">
+      <div class="circle-inner">
+        {{ getType(caItem.type) | uppercase }}
+      </div>
+    </div>
+    <div [class.disabled]="nextDisabled ? true : null" class="right-tooltip" matTooltip="Next item">
+      <button mat-button class="right-button" (click)="next()" [disabled]="nextDisabled">
+        <mat-icon class="prevnext">chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div>
+    <p class="ca-number">{{ caItem.ca_number }}:</p>
+  </div>
+  <div>
+    <p class="title">{{ caItem.title }}</p>
+  </div>
+  <form class="ca-data">
+    <div class="full-width">
+      <mat-form-field>
+        <textarea matInput placeholder="DESCRIPTION" [value]="caItem.description !== null && caItem.description != '' ? caItem.description : 'N/A'" disabled cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="50">
+        </textarea>
+      </mat-form-field>
+    </div>
+    <div class="two-halves">
+      <mat-form-field>
+        <textarea matInput [placeholder]="
+          caItem.discipline.length <= 1 ? 'DISCIPLINE' : 'DISCIPLINES'
+        " [value]="caItem.discipline.join(', ') !== '' ? caItem.discipline.join(', ') : 'N/A'" disabled cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+              </textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="CA NUMBER" [value]="caItem.ca_number !== null && caItem.ca_number != '' ? caItem.ca_number : 'N/A'" disabled cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+          </textarea>
+      </mat-form-field>
+    </div>
+    <div class="four-quarters">
+      <div>
+        <mat-form-field>
+          <textarea matInput [placeholder]="
+            caItem.geodata[geoDataTypes.geoData2] == undefined &&
+            caItem.geodata[geoDataTypes.geoData2] == null ||
+            caItem.geodata[geoDataTypes.geoData2].length <= 1 ?
+            geoDataTypes.geoData2.toUpperCase() : geoDataTypes.geoData2.toUpperCase() + 'S'"
+            [value]="caItem.geodata[geoDataTypes.geoData2] != undefined &&
+              caItem.geodata[geoDataTypes.geoData2].join(', ') !== '' ?
+              caItem.geodata[geoDataTypes.geoData2].join(', ') : 'N/A'"
+            disabled cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+            </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput [placeholder]="
+          caItem.level_number.length <= 1 ? 'LEVEL' : 'LEVELS'
+        " [value]="caItem.level_number.join(', ') !== '' ? caItem.level_number.join(', ') : 'N/A'" disabled cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+            </textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <textarea matInput placeholder="{{geoDataTypes.geoData1.toUpperCase()}}"
+            [value]="caItem.geodata[geoDataTypes.geoData1] !== null && caItem.geodata[geoDataTypes.geoData1] != undefined ?
+              caItem.geodata[geoDataTypes.geoData1] : 'N/A'" disabled cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+            </textarea>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput placeholder="PHASE" [value]="caItem.phase !== null && caItem.phase != '' ? caItem.phase : 'N/A'" disabled cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+            </textarea>
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="two-halves">
+      <mat-form-field>
+        <textarea matInput placeholder="ADMINISTRATOR" [value]="caItem.administrator !== null && caItem.administrator != '' ? caItem.administrator : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="STATUS" [value]="caItem.status | titlecase" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+    </div>
+    <div class="two-halves">
+      <mat-form-field>
+        <textarea matInput placeholder="RESPONSIBLE FIRM" [value]="caItem.responsible_firm !== null && caItem.responsible_firm != '' ? caItem.responsible_firm : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="RETURN COMPANY" [value]="caItem.return_company !== null && caItem.return_company != '' ? caItem.return_company : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+    </div>
+    <div class="two-halves">
+      <mat-form-field>
+        <textarea matInput placeholder="DATE ISSUED" [value]="caItem.issue_date !== null ? (caItem.issue_date | date: 'mediumDate') : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="DATE RECEIVED" [value]="caItem.receive_date !== null ? (caItem.receive_date | date: 'mediumDate') : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+    </div>
+    <div class="two-halves">
+      <mat-form-field>
+        <textarea matInput placeholder="DATE DUE" [value]="caItem.due_date !== null ? (caItem.due_date | date: 'mediumDate') : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="DATE RETURNED" [value]="caItem.return_date !== null ? (caItem.return_date | date: 'mediumDate') : 'N/A'" disabled
+          cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="1">
+        </textarea>
+      </mat-form-field>
+    </div>
+    <div class="two-halves"></div>
+    <div class="full-width">
+      <mat-form-field>
+        <textarea matInput placeholder="PM TOOLKIT LINK" [value]="caItem.pmtk_url !== null && caItem.pmtk_url != '' ? caItem.pmtk_url : 'N/A'" disabled cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" #pmtk_url class="pmtk-url">
+        </textarea>
+        <button class="copy-link-button" (click)="copyString(caItem.pmtk_url)" matTooltip="Copy Link" mat-icon-button matSuffix>
+          <mat-icon class="copy-link-symbol" [disableRipple]="true">link</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
+
+  <!-- associated drawings -->
+  <mat-list>
+    <mat-list-item>
+      <p class="section-title"><mat-divider [inset]="true"></mat-divider>ASSOCIATED DRAWINGS</p>
+      <mat-divider [inset]="true"></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  <table *ngIf="caItem.associated_drawings.length !== 0; else noDrawings" mat-table class="item-associated-drawing" [dataSource]="caItem.associated_drawings">
+    <!-- Sheet Type Column -->
+    <ng-container matColumnDef="sheet_type">
+      <th mat-header-cell *matHeaderCellDef>Sheet Type</th>
+      <td mat-cell *matCellDef="let drawingItem">
+        <div class="circle icon-drawing-{{ drawingItem.sheet_type_id }}">
+          <div class="circle-inner">
+            {{ getDrawingSheetTypeShort(drawingItem.sheet_type) }}
+          </div>
+        </div>
+      </td>
+    </ng-container>
+    <!-- Drawing Number Column -->
+    <ng-container matColumnDef="drawing_number">
+      <th mat-header-cell *matHeaderCellDef>Drawing Number</th>
+      <td mat-cell *matCellDef="let drawingItem">
+        <span *ngIf="drawingItem.url_endpoint !== 'null'; else nullDrawingNumber">
+          {{ drawingItem.drawing_number }}
+        </span>
+        <ng-template #nullDrawingNumber>
+          <span class="disabled">
+            {{ drawingItem.drawing_number }}
+          </span>
+        </ng-template>
+      </td>
+    </ng-container>
+    <!-- Drawing Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Drawing Title</th>
+      <td mat-cell *matCellDef="let drawingItem">
+        <span *ngIf="drawingItem.url_endpoint !== 'null'; else nullDrawingTitle">
+          {{ drawingItem.title }}
+        </span>
+        <ng-template #nullDrawingTitle>
+          <span class="disabled">
+            {{ drawingItem.title }}
+          </span>
+        </ng-template>
+      </td>
+    </ng-container>
+    <tr mat-header-row
+      *matHeaderRowDef="drawingColumnsToDisplay; sticky: true">
+    </tr>
+    <tr mat-row
+      *matRowDef="let drawingItem; columns: drawingColumnsToDisplay"
+      [ngClass]="{ 'item-associated-drawing-row': true, 'enabled': drawingItem.url_endpoint !== null , 'disabled': drawingItem.url_endpoint === null }"
+      (click)="selectAssociatedDrawingItem(drawingItem)"
+      routerLink="/dashboard/drawing/{{drawingItem.url_endpoint}}">
+    </tr>
+  </table>
+  <ng-template #noDrawings>
+    <h1 class="not-found">No associated drawings found.</h1>
+  </ng-template>
+
+  <!-- associated specifications -->
+  <mat-list>
+    <mat-list-item>
+      <p class="section-title"><mat-divider [inset]="true"></mat-divider>ASSOCIATED SPECIFICATIONS</p>
+      <mat-divider [inset]="true"></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  <table *ngIf="caItem.specifications.length !== 0; else noSpecifications" mat-table class="item-associated-drawing" [dataSource]="caItem.specifications">
+    <!-- Sheet Type Column -->
+    <ng-container matColumnDef="division">
+      <th mat-header-cell *matHeaderCellDef>Division</th>
+      <td mat-cell *matCellDef="let specificationItem">
+        <div class="circle icon-specification-{{ specificationItem.division }}">
+          <div class="circle-inner">
+            {{ specificationItem.division }}
+          </div>
+        </div>
+      </td>
+    </ng-container>
+    <!-- Drawing Number Column -->
+    <ng-container matColumnDef="specification_number">
+      <th mat-header-cell *matHeaderCellDef>Specification Number</th>
+      <td mat-cell *matCellDef="let specificationItem">
+        <span *ngIf="specificationItem.url_endpoint !== 'null'; else nullDrawingNumber">
+          {{ specificationItem.spec_number }}
+        </span>
+        <ng-template #nullDrawingNumber>
+          <span class="disabled">
+            {{ specificationItem.spec_number }}
+          </span>
+        </ng-template>
+      </td>
+    </ng-container>
+    <!-- Drawing Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Specification Title</th>
+      <td mat-cell *matCellDef="let specificationItem">
+        <span *ngIf="specificationItem.url_endpoint !== 'null'; else nullSpecificationTitle">
+          {{ specificationItem.spec_title }}
+        </span>
+        <ng-template #nullSpecificationTitle>
+          <span class="disabled">
+            {{ specificationItem.spec_title }}
+          </span>
+        </ng-template>
+      </td>
+    </ng-container>
+    <tr mat-header-row
+      *matHeaderRowDef="specificationColumnsToDisplay; sticky: true">
+    </tr>
+    <tr mat-row
+      *matRowDef="let specificationItem; columns: specificationColumnsToDisplay"
+      [ngClass]="{ 'item-associated-drawing-row': true, 'enabled': specificationItem.url_endpoint !== null , 'disabled': specificationItem.url_endpoint === null }"
+      (click)="selectAssociatedSpecificationItem(specificationItem)"
+      routerLink="/dashboard/specification/{{specificationItem.url_endpoint}}">
+    </tr>
+  </table>
+  <ng-template #noSpecifications>
+    <h1 class="not-found">No associated specifications found.</h1>
+  </ng-template>
+
+  <!-- associated files -->
+  <mat-list>
+    <mat-list-item>
+      <p class="section-title"><mat-divider [inset]="true"></mat-divider>ASSOCIATED FILES</p>
+      <mat-divider [inset]="true"></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  <div *ngIf="caItem.cafiles.length !== 0; else noCaFiles" class="table-container">
+    <table mat-table class="ca-item" [dataSource]="caItem.cafiles">
+      <!-- Title Column -->
+      <ng-container matColumnDef="file_name">
+        <th mat-header-cell class="associatedFileHeader" *matHeaderCellDef>File Name</th>
+        <td mat-cell *matCellDef="let cafile">{{ cafile.file_name }}</td>
+      </ng-container>
+      <!-- Path Column -->
+      <ng-container matColumnDef="file_path">
+        <th mat-header-cell class="associatedFileHeader" *matHeaderCellDef>File Path</th>
+        <td mat-cell *matCellDef="let cafile" class="file-path">{{ cafile.file_path }}</td>
+      </ng-container>
+      <!-- Icons Column -->
+      <ng-container matColumnDef="download">
+        <th mat-header-cell class="associatedFileHeader" *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let cafile; let i = index">
+          <div fxLayout="row">
+            <button mat-icon-button (click)="openItem(cafile)" matTooltip="Download">
+              <mat-icon class="download" aria-hidden="false">get_app</mat-icon>
+            </button>
+            <button mat-icon-button (click)="copyPath(cafile.file_path)" matTooltip="Copy Path">
+              <mat-icon class="copy" aria-hidden="false">link</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+      <!-- Header Row -->
+      <tr mat-header-row *matHeaderRowDef="fileColumnsToDisplay; sticky: true"></tr>
+      <tr mat-row *matRowDef="let cafile; columns: fileColumnsToDisplay" class="ca-item-row"></tr>
+    </table>
+  </div>
+</div>
+<ng-template #noCaFiles>
+  <h1 class="not-found">No files found.</h1>
+</ng-template>

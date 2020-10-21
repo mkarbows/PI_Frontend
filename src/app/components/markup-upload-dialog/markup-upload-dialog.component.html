@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Markup Upload for Drawing: {{ drawingData.number }}</h1>
+
+<form name="uploadForm" #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
+  <div class="input-container">
+    <mat-form-field>
+      <input matInput [ngModel]="username" name="username" placeholder="Username">
+    </mat-form-field>
+    <mat-form-field>
+      <input ngModel matInput name="title" placeholder="Markup Title">
+    </mat-form-field>
+    <mat-form-field>
+      <input ngModel matInput name="comments" placeholder="Comments">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput class="markup-title" placeholder="" [value]="filename" disabled
+              cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10">
+      </textarea>
+
+      <label class="attach-button" type="button" matSuffix>
+          <mat-icon class="label-ripple" matRipple>attach_file</mat-icon>
+          <input ng2FileSelect class="none" type="file" [uploader]="uploader" (change)="onFileSelected($event)"/>
+      </label>
+
+    </mat-form-field>
+  </div>
+  <br/>
+  <div *ngIf="uploading">
+    Upload progress:
+    <br/>
+    <br/>
+    <div class="progress">
+      <mat-progress-bar mode="determinate" [value]="uploader.progress"></mat-progress-bar>
+    </div>
+  </div>
+  <p class="error"> {{ errorMessage }} </p>
+  <div>
+    <button mat-flat-button class="upload-button" color="accent" type="submit">Upload</button>
+    <button mat-flat-button class="cancel-button" type="button" (click)="onNoClick()">Cancel</button>
+  </div>
+</form>

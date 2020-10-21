@@ -1,0 +1,31 @@
+<ng-container *ngIf="selectedNavType$ | async as selectedNavType">
+  <app-item-header-container [selectedNavType]="selectedNavType" [pageItemCount]="fileCount$ | async">
+  </app-item-header-container>
+</ng-container>
+  <!-- show grid for media thumbnails -->
+<ng-container *ngIf="selectedNavType$ | async as selectedNavType">
+  <ng-container *ngIf="selectedNavType === 'media'">
+    <app-item-grid-container
+      [selectedNavType]="selectedNavType"
+      [currentPage]="currentPage$ | async">
+    </app-item-grid-container>
+  </ng-container>
+  <!-- show table for drawings -->
+  <ng-container *ngIf="selectedNavType === 'drawing'">
+    <div class="table-container" id="table-container">
+      <app-item-table-container></app-item-table-container>
+    </div>
+  </ng-container>
+  <!-- show table for specs -->
+  <ng-container *ngIf="selectedNavType === 'specification'">
+    <div class="table-container" id="table-container">
+      <app-item-table-container></app-item-table-container>
+    </div>
+  </ng-container>
+  <!-- show table for ca -->
+  <ng-container *ngIf="selectedNavType === 'ca'">
+    <div class="table-container" id="table-container">
+      <app-item-table-container></app-item-table-container>
+    </div>
+  </ng-container>
+</ng-container>
